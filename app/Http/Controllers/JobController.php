@@ -25,4 +25,11 @@ class JobController extends Controller
         return view ('jobs.show',compact('job','applicants'));
 
     }
+   
+    // for showinf all jobs
+public function index()
+{
+    $jobs = Job::all(); // Fetch all jobs
+    return view('jobs.index', compact('jobs')); // Pass jobs to the view
+}
 }
