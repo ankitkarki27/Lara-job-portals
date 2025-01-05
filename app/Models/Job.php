@@ -16,4 +16,10 @@ class Job extends Model
         return $this->hasMany(Applicant::class);
         // hasMany meth means 1 to m reln
     }
+    // In Job.php (Model)
+      public function company()
+      {
+          return $this->belongsTo(Company::class);
+      }
+
 }

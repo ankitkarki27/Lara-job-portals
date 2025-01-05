@@ -1,147 +1,213 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Hero Section -->
 
- <div class="bg-blue-600">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold text-white mb-6">Find Your Dream Job Today</h1>
-            <p class="text-xl text-blue-100 mb-8">Connect with over 10,000+ employers and start your next career journey</p>
+<!-- Hero Section with Animated Gradient -->
+<div class="relative bg-gradient-to-br from-blue-950 via-blue-800 to-blue-900 rounded-lg">
+    <!-- Overlay Pattern -->
+    <div class="rounded-lg absolute inset-0 bg-blue-900/30" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);background-size: 24px 24px; "></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
+        <!-- Hero Content -->
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Find Your 
+                <span class="bg-gradient-to-r from-blue-200 to-blue-100 text-transparent bg-clip-text"> Dream Job</span>
+                Today
+            </h1>
             
-            <!-- Search Box -->
-            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-4">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <div class="flex-1">
-                        <input type="text" placeholder="Job title or keyword" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-800">
+            <p class="text-xl text-blue-100 mb-12 font-light max-w-2xl mx-auto">
+                Connect with over <span class="font-semibold">100+</span> employers and start your next career journey
+            </p>
+
+            <!-- Enhanced Search Box -->
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-lg">
+                <!-- Search Tabs -->
+                <div class="flex gap-6 mb-6 border-b border-gray-200">
+                    <button class="text-blue-600 border-b-2 border-blue-600 pb-3 font-medium">Job Search</button>
+                    <button class="text-gray-500 hover:text-gray-700 pb-3 font-medium">Company Search</button>
+                </div>
+
+                <!-- Search Form -->
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Job Title Input -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 text-left">Job Title</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" 
+                                       placeholder="e.g., Software Engineer" 
+                                       class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                            </div>
+                        </div>
+
+                        <!-- Company Input -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 text-left">Company</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" 
+                                       placeholder="e.g., Google, Amazon" 
+                                       class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                            </div>
+                        </div>
+
+                        <!-- Location Input -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-gray-700 mb-1 text-left">Location</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" 
+                                       placeholder="e.g., New York, Remote" 
+                                       class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        <input type="text" placeholder="Location" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+
+                    <!-- Search Button -->
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition-colors duration-300 font-semibold shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                        <span>Search Opportunities</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Popular Searches -->
+                    <div class="pt-6 border-t border-gray-100">
+                        <p class="text-sm text-gray-600 mb-3 text-left">Trending Searches:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="text-sm text-gray-700 bg-gray-100 px-4 py-1.5 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Remote Jobs
+                            </a>
+                            <a href="#" class="text-sm text-gray-700 bg-gray-100 px-4 py-1.5 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Tech Startups
+                            </a>
+                            <a href="#" class="text-sm text-gray-700 bg-gray-100 px-4 py-1.5 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Software Engineer
+                            </a>
+                            <a href="#" class="text-sm text-gray-700 bg-gray-100 px-4 py-1.5 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Product Design
+                            </a>
+                        </div>
                     </div>
-                    <button class="bg-blue-800 text-white px-8 py-2 rounded-lg hover:bg-blue-900">Search</button>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-white">10K+</p>
+                    <p class="text-blue-200 text-sm mt-1">Active Jobs</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-white">8K+</p>
+                    <p class="text-blue-200 text-sm mt-1">Companies</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-white">15K+</p>
+                    <p class="text-blue-200 text-sm mt-1">Job Seekers</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-white">95%</p>
+                    <p class="text-blue-200 text-sm mt-1">Success Rate</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="jobs" class="w-full bg-gray-50">
-    <div class="max-w-[1920px] mx-auto py-8 px-6">
+
+{{-- jobs section --}}
+<div id="jobs" class="container mx-auto bg-white py-8 px-4">
+    <h2 class="text-2xl font-semibold text-center mb-6 text-gray-800">Available Jobs</h2>
+    <div class="max-w-7xl mx-auto">
         @if($jobs->isEmpty())
-            <p class="text-center text-gray-500">No jobs available at the moment.</p>
+            <p class="text-center text-sm text-gray-500">No jobs available at the moment.</p>
         @else
-            <div class="grid grid-cols-1 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 @foreach($jobs as $job)
-                    <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 h-[280px]">
-                        <div class="flex justify-between h-full">
-                            <!-- Left Section -->
-                            <div class="flex-1 pr-8">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-gray-700 font-medium">{{ $job->company }}</h3>
-                                    <div class="flex items-center gap-6 text-gray-500 text-sm">
-                                        <span class="flex items-center gap-2">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                                            </svg>
-                                            {{ $job->location }}
-                                        </span>
-                                        <span class="flex items-center gap-2">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                            </svg>
-                                            {{ $job->posted_date }}
-                                        </span>
-                                    </div>
+                    <div class="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow duration-200">
+                        <!-- Company Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
                                 </div>
-
-                                <h2 class="text-2xl font-semibold text-gray-900 mb-4">{{ $job->title }}</h2>
-                                <p class="text-gray-600 mb-6">{{ $job->job_type }} - {{ $job->salary_range }}</p>
-
-                                <div class="flex flex-wrap gap-2">
-                                    @foreach(explode(',', $job->key_skills) as $skill)
-                                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
-                                            {{ trim($skill) }}
-                                        </span>
-                                    @endforeach
+                                <div>
+                                    <h3 class="text-sm font-medium text-gray-900">{{ $job->company->name }}</h3>
+                                    <span class="text-xs text-gray-500">{{ $job->company->address }}</span>
                                 </div>
                             </div>
-
-                            <!-- Right Section -->
-                            <div class="flex items-center">
-                                @auth
-                                    <form action="{{ route('jobs.show', $job->id) }}">
-                                        <button type="submit" 
-                                                class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
-                                            View Details
-                                        </button>
-                                    </form>
-                                @endauth
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @endif
-    </div>
-</div>
-
-<div id="jobs" class="container w-full bg-gray-50 py-12 px-4">
-    <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">Available Jobs</h2>
-    <div class="max-w-[1920px] mx-auto py-8 px-6">
-        @if($jobs->isEmpty())
-            <p class="text-center text-gray-500">No jobs available at the moment.</p>
-        @else
-            <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
-                @foreach($jobs as $job)
-                    <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-red-400">
-                        <!-- Company and Time Info -->
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-gray-700 font-medium">{{ $job->company }}</h3>
-                            <div class="flex items-center gap-4 text-gray-800 rounded-full text-sm text-m">
-                                <span class="flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                                    </svg>
-                                    {{ $job->job_type }}
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    {{ $job->deadline }}
-                                </span>
-                            </div>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">
+                                {{ $job->job_type }}
+                            </span>
                         </div>
 
                         <!-- Job Title -->
-                        <h2 class="text-xl font-bold text-gray-900 mb-3">{{ $job->title }}</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 mb-2">{{ $job->title }}</h2>
 
-                        <!-- Salary Range -->
-                        <p class="text-gray-600 mb-4">{{ $job->job_type }}-Rs {{ $job->salary }}</p>
-                        <p class="text-gray-600 mb-4"> Experience - {{ $job->required_experience }} yrs  </p>
-                        <!-- Tags -->
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            @foreach(explode(',', $job->key_skills) as $skill)
-                                <span class="px-3 py-1 bg-red-200 text-gray-600 rounded-full text-sm">
-                                    {{ trim($skill) }}
-                                </span>
-                            @endforeach
-                        </div><br>
-<hr>
-{{ $job->created_at }}
-                        <div class="mt-4 flex items-center justify-between">
-                            <a href="{{ route('jobs.show', $job->id) }}" 
-                               class="text-indigo-600 text-sm font-medium hover:underline">
+                        <!-- Key Details -->
+                        <div class="space-y-2 mb-3">
+                            <!-- Salary & Experience -->
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Rs.{{ $job->salary }}</span>
+                                <span class="text-gray-400">•</span>
+                                <span>{{ $job->required_experience }} years</span>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="flex flex-wrap gap-1">
+                                @foreach(explode(',', $job->key_skills) as $skill)
+                                    <span class="px-2 py-0.5 bg-red-50 text-gray-600 rounded-full text-xs">
+                                        {{ trim($skill) }}
+                                    </span>
+                                @endforeach
+                            </div>
+
+                            <!-- Location -->
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span>{{ $job->company->address }}</span>
+                            </div>
+
+                            <!-- Deadline -->
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>{{ \Carbon\Carbon::parse($job->deadline)->format('Y-m-d') }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="flex justify-end pt-3 border-t border-gray-100">
+                            <a href="{{ route('jobs.show', $job->id) }}" class="inline-flex items-center px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
                                 View Details
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
                             </a>
-                            @auth
-                                <form action="{{ route('jobs.show', $job->id) }}">
-                                    {{-- @csrf --}}
-                                    <button type="submit" 
-                                            class="text-sm bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-500 transition">
-                                        View Details
-                                    </button>
-                                </form>
-                            @endauth
                         </div>
                     </div>
                 @endforeach
@@ -149,8 +215,11 @@
         @endif
     </div>
 </div>
+
+{{-- old jobs --}}
+
     <!-- Features Section -->
-    <div class="bg-gray-50 py-16">
+    <div class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Why Choose jobsNepal?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
