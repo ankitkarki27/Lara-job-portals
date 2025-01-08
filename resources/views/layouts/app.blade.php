@@ -23,9 +23,6 @@
         @yield('content')
     </main>
 
-    
-
-  
     @include('partials.footer')
     <script>
         feather.replace();
